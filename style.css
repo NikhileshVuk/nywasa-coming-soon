@@ -296,7 +296,7 @@ input {
 .brand__tagline {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(0.85rem, 1.8vw, 0.95rem);
   color: var(--color-gold);
   letter-spacing: 0.2em;
@@ -902,7 +902,7 @@ input {
 /* ---- Large Desktop (1400px+) ---- */
 @media (min-width: 1400px) {
   .hero {
-    background-image: url('https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=2400&q=80&auto=format&fit=crop');
+    background-image: url('BG.png');
     /* REPLACE: use a 2400px wide version for retina displays */
   }
 }

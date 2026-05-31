@@ -190,7 +190,7 @@ async function handleEmailSubmit() {
    *   - Optional: connect to Mailchimp / ConvertKit for automation
    * ---------------------------------------------------------------- */
   // REPLACE: 'YOUR_FORM_ID' with your Formspree form ID
-  await submitViaFormspree(email, 'YOUR_FORM_ID');
+  await submitViaFormspree(email, 'xredvwwe');
 
 
   /* ------ METHOD B: EmailJS (Free, client-side only) --------------
