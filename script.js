@@ -1,5 +1,5 @@
 /**
- * NYWASA — Coming Soon Landing Page
+ * QEYNSHA — Coming Soon Landing Page
  * script.js
  *
  * Contents:
@@ -226,11 +226,11 @@ async function handleEmailSubmit() {
    device/browser — useful as a backup alongside your main service.
 
    To read stored emails in the browser console, run:
-     JSON.parse(localStorage.getItem('nywasa_signups'))
+     JSON.parse(localStorage.getItem('qeynsha_signups'))
    ================================================================ */
 function saveEmailLocally(email) {
   try {
-    const existing = JSON.parse(localStorage.getItem('nywasa_signups') || '[]');
+    const existing = JSON.parse(localStorage.getItem('qeynsha_signups') || '[]');
     // Avoid duplicate entries
     if (!existing.find(entry => entry.email === email)) {
       existing.push({
@@ -238,10 +238,10 @@ function saveEmailLocally(email) {
         timestamp: new Date().toISOString(),
         source:    'coming_soon_page',
       });
-      localStorage.setItem('nywasa_signups', JSON.stringify(existing));
+      localStorage.setItem('qeynsha_signups', JSON.stringify(existing));
     }
   } catch (e) {
-    console.warn('[NYWASA] Could not save email locally:', e);
+    console.warn('[QEYNSHA] Could not save email locally:', e);
   }
 }
 
@@ -253,7 +253,7 @@ async function submitViaFormspree(email, formId) {
   /* If the form ID hasn't been configured yet, show success anyway
      (dev/preview mode — remove this check before going live) */
   if (formId === 'YOUR_FORM_ID') {
-    console.info('[NYWASA] Formspree form ID not set — running in demo mode.');
+    console.info('[QEYNSHA] Formspree form ID not set — running in demo mode.');
     setLoading(false);
     showSuccess();
     return;
@@ -266,7 +266,7 @@ async function submitViaFormspree(email, formId) {
         'Content-Type': 'application/json',
         'Accept':       'application/json',
       },
-      body: JSON.stringify({ email: email, _subject: 'New NYWASA Early Access Signup' }),
+      body: JSON.stringify({ email: email, _subject: 'New QEYNSHA Early Access Signup' }),
     });
 
     const data = await response.json();
@@ -280,7 +280,7 @@ async function submitViaFormspree(email, formId) {
       setError(msg);
     }
   } catch (err) {
-    console.error('[NYWASA] Formspree error:', err);
+    console.error('[QEYNSHA] Formspree error:', err);
     setLoading(false);
     // Still show success locally so user experience isn't broken
     showSuccess();
@@ -301,14 +301,14 @@ async function submitViaEmailJS(email, { publicKey, serviceId, templateId }) {
   try {
     await emailjs.send(serviceId, templateId, {
       user_email:  email,
-      to_email:    'hello@nywasa.com',    // REPLACE: your receiving email
-      brand_name:  'NYWASA',
+      to_email:    'nikhilesh@qeynsha.com',    // REPLACE: your receiving email
+      brand_name:  'QEYNSHA',
       reply_to:    email,
     });
     setLoading(false);
     showSuccess();
   } catch (err) {
-    console.error('[NYWASA] EmailJS error:', err);
+    console.error('[QEYNSHA] EmailJS error:', err);
     setLoading(false);
     setError('Submission failed. Please try again shortly.');
   }
@@ -358,7 +358,7 @@ if (yearEl) {
    8. INIT LOG (remove or keep for debugging)
    ================================================================ */
 console.log(
-  '%cNYWASA',
+  '%cQEYNSHA',
   'color:#C9A66B;font-family:Georgia,serif;font-size:28px;font-style:italic;',
   '\nThe Art of Gifting — Coming Soon'
 );
