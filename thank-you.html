@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank You — Qeynsha</title>
+<!--
+  ===========================================================================
+  QEYNSHA — "THANK YOU FOR YOUR SUPPORT" PAGE
+  ===========================================================================
+  A single, standalone HTML+CSS file. No JavaScript, no build step, no
+  connection to any other file or system — just open it in a browser, or
+  drop it anywhere you'd like to host it.
+
+  WHAT TO EDIT
+  Everything you'd want to change is text inside the <body> below:
+    - The heading and message text
+    - The "Back to Home" link's href (currently points to "/")
+    - The footer line at the bottom
+
+  All colors, fonts, and spacing live in the <style> block above the body
+  if you ever want to adjust the look.
+  ===========================================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  /* -------------------------------------------------------------------
+     Brand tokens — same palette as the main Qeynsha website.
+     Change these five values to re-theme the whole page.
+     ------------------------------------------------------------------- */
+  :root {
+    --cream: #f8f4ec;
+    --beige: #ede3d2;
+    --gold: #b68a3c;
+    --gold-light: #d9b978;
+    --charcoal: #2b2724;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: "Manrope", -apple-system, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+
+  /* -------------------------------------------------------------------
+     Card
+     ------------------------------------------------------------------- */
+  .card {
+    position: relative;
+    max-width: 520px;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid var(--beige);
+    padding: 56px 40px 44px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(43, 39, 36, 0.08);
+    animation: fadeInUp 0.7s ease both;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Small decorative gold sparkles around the card — purely CSS. */
+  .sparkle {
+    position: absolute;
+    color: var(--gold-light);
+    font-size: 18px;
+    animation: pulse 2.6s ease-in-out infinite;
+  }
+  .sparkle.s1 { top: 18px;  left: 22px;  animation-delay: 0s; }
+  .sparkle.s2 { top: 30px;  right: 30px; animation-delay: 0.6s; font-size: 12px; }
+  .sparkle.s3 { bottom: 24px; left: 36px; animation-delay: 1.2s; font-size: 14px; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.35; transform: scale(0.9); }
+    50%      { opacity: 1;    transform: scale(1.1); }
+  }
+
+  /* -------------------------------------------------------------------
+     Brand mark + ribboned gift icon (same motif as the homepage)
+     ------------------------------------------------------------------- */
+  .brand {
+    font-family: "Cormorant", Georgia, serif;
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+
+  .icon {
+    margin: 0 auto 20px;
+    width: 84px;
+    height: 84px;
+  }
+
+  /* -------------------------------------------------------------------
+     Typography
+     ------------------------------------------------------------------- */
+  h1 {
+    font-family: "Cormorant", Georgia, serif;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 1.15;
+    color: var(--charcoal);
+  }
+
+  h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  p.message {
+    margin-top: 18px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4a443e;
+  }
+
+  p.message + p.message {
+    margin-top: 10px;
+  }
+
+  /* -------------------------------------------------------------------
+     Button
+     ------------------------------------------------------------------- */
+  .btn {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 13px 36px;
+    background: var(--charcoal);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+  }
+  .btn:hover {
+    background: var(--gold);
+  }
+
+  /* -------------------------------------------------------------------
+     Footer
+     ------------------------------------------------------------------- */
+  .footer-note {
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid var(--beige);
+    font-size: 12px;
+    color: #8a8278;
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <span class="sparkle s1">✦</span>
+    <span class="sparkle s2">✦</span>
+    <span class="sparkle s3">✦</span>
+
+    <!-- EDIT: your brand name -->
+    <div class="brand">Qeynsha</div>
+
+    <!-- Decorative ribboned gift box icon, matches the main site's homepage -->
+    <svg class="icon" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="60" y="140" width="200" height="130" stroke="#B68A3C" stroke-width="3" />
+      <rect x="40" y="100" width="240" height="46" stroke="#B68A3C" stroke-width="3" />
+      <line x1="160" y1="100" x2="160" y2="270" stroke="#B68A3C" stroke-width="3" />
+      <path
+        d="M160 100 C120 60, 90 70, 100 95 C108 112, 140 105, 160 100 C180 105, 212 112, 220 95 C230 70, 200 60, 160 100 Z"
+        stroke="#B68A3C"
+        stroke-width="3"
+      />
+      <circle cx="160" cy="100" r="4" fill="#B68A3C" />
+    </svg>
+
+    <!-- EDIT: heading -->
+    <h1>Thank You for Your <em>Support</em></h1>
+
+    <!-- EDIT: your message — split into separate <p class="message"> tags for spacing -->
+    <p class="message">
+      Every order, every kind word, and every moment you've chosen Qeynsha
+      means more to us than a quick thank-you can really capture.
+    </p>
+    <p class="message">
+      We're a small team pouring care into every piece we send out, and
+      support like yours is exactly what makes that possible. From all of
+      us — thank you.
+    </p>
+
+    <!-- EDIT: change href="/" to wherever you'd like this button to lead,
+         or delete this whole <a> tag if you don't want a button at all. -->
+    <a class="btn" href="/">Back to Home</a>
+
+    <!-- EDIT: footer line -->
+    <div class="footer-note">With gratitude, the Qeynsha team</div>
+  </div>
+
+</body>
+</html>
